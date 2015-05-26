@@ -18,8 +18,8 @@ class Produto {
                 ->getReference('Application\Entity\Categoria', $data['categoriaId']);   
          
         $produtoEntity = new ProdutoEntity();
-        $produtoEntity->setNome('Mackbook 15')
-                ->setDescricao('Super Máquina')
+        $produtoEntity->setNome($data['nome'])
+                ->setDescricao($data['descricao'])
                 ->setCategoria($categoriaEntity);
         
         $this->em->persist($produtoEntity);
